@@ -1,6 +1,7 @@
 class TwoFer{
     public static twoFer(name?: string) : string {
         
+        //check if optional provided
         if(name === undefined)
         {
             return `One for you, one for me.`;
