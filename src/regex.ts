@@ -9,6 +9,8 @@ class regexValidators{
         let regexp: RegExp = /^\+40\s7\d{8}$/;
         return regexp.test(phoneNumber);
     }
+
+    //adds padding with 0 for one digit months
     private static formatMonth(month : number) : string{
         month = month + 1;
         if(month < 10)
@@ -17,6 +19,7 @@ class regexValidators{
         }
         else return `${month}`;
     }
+    //adds padding with 0 for one digit days
     private static formatDay(day : number) : string{
         if(day < 10)
         {
@@ -25,6 +28,7 @@ class regexValidators{
         else return `${day}`;
     }
 
+    //get the date of today formated in the YYYY-MM-DD format
     public static getToday() : string {
         var today = new Date();
         let date : string = today.getFullYear()+'-'+regexValidators.formatMonth(today.getMonth())+'-'+regexValidators.formatDay(today.getDate());//yyyy-mm-dd;  

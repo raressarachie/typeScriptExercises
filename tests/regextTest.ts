@@ -86,6 +86,18 @@ describe('regexValidators', () => {
         it('dob invalid day in november(31)', () => {
             expect(regexValidators.validateDOB('2000-11-31')).toBeFalsy();
         });
+        it('day with 00', () => {
+            expect(regexValidators.validateDOB('2000-11-00')).toBeFalsy();
+        });
+        it('month with 00', () => {
+            expect(regexValidators.validateDOB('2000-00-11')).toBeFalsy();
+        });
+        it('5 digit year', () => {
+            expect(regexValidators.validateDOB('20001-11-00')).toBeFalsy();
+        });
+        it('empty date', () => {
+            expect(regexValidators.validateDOB('')).toBeFalsy();
+        });
 
     });
 })
