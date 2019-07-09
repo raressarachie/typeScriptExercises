@@ -4,7 +4,7 @@ class regexValidators{
         let regexp: RegExp = /^\d{5}(?:[-\s]\d{4})?$/;
         return regexp.test(zip);
     }
-    //validate a phone number(romanian) ex +40 0773924110 10 digits must start with 0 followed by 7 
+    //validate a phone number(romanian) ex +40 773924110 10 digits must start with 0 followed by 7 
     public static validatePhoneNumber(phoneNumber: string) :boolean{
         let regexp: RegExp = /^\+40\s7\d{8}$/;
         return regexp.test(phoneNumber);

@@ -49,10 +49,7 @@ class TrimestrialReport {
     }
     ;
     procentualReportPerSplitForClient(client) {
-        let percentageSplitForClient;
-        percentageSplitForClient[0].client = client;
-        percentageSplitForClient[1].client = client;
-        percentageSplitForClient[2].client = client;
+        let percentageSplitForClient = [new split_1.default(client), new split_1.default(client), new split_1.default(client)];
         let avgSplit = this.avgPerSplit();
         let totalPerSplit = this.totalPerSplitForClient(client);
         for (let i = 0; i < avgSplit.length; i++) {

@@ -25,7 +25,7 @@ class Repository {
                         date.setDate(15);
                         ok = 0;
                     }
-                    let inv = new invoice_1.default(Repository.getRandomIntInclusive(0, 1000000), element, date);
+                    let inv = new invoice_1.default(Repository.getRandomIntInclusive(0, 1000), element, date);
                     this.invoices.push(inv);
                     i++;
                 }

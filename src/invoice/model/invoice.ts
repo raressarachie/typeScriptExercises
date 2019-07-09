@@ -1,4 +1,4 @@
-class invoice{
+class Invoice{
     constructor(private _total: number,private _client: string,private _date: Date){
         this._total = _total;
         this._client = _client;
@@ -19,4 +19,4 @@ class invoice{
 
 
 }
-export default invoice
+export default Invoice
