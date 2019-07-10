@@ -1,7 +1,7 @@
 /*
 Allergies(score)
 {
-    allergiesMap - map for storing the know allergies key(score of the allergie), value(name of the allergie)
+    allergiesMap - map for storing the known allergies key(score of the allergie), value(name of the allergie)
     allergieList - the list for storing the person's allergies
 }
 */ 

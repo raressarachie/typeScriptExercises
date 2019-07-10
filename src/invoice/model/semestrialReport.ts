@@ -26,24 +26,28 @@ class SemestrialReport implements Report{
                     case 2:
                     {
                         totalsSplit[0] += element.total;
+                        break;
                     }
                     case 3:
                     case 4:
                     case 5:
                     {
-                        totalsSplit[1] += element.total;                    
+                        totalsSplit[1] += element.total;
+                        break;                    
                     }
                     case 6:
                     case 7:
                     case 8:
                     {
-                        totalsSplit[2] += element.total; 
+                        totalsSplit[2] += element.total;
+                        break; 
                     }
                     case 9:
                     case 10:
                     case 11:
                     {
-                        totalsSplit[3] += element.total;  
+                        totalsSplit[3] += element.total; 
+                        break; 
                     } 
                 }
             }   
@@ -55,55 +59,43 @@ class SemestrialReport implements Report{
     totalPerSplitForClient(client : string){
         let totalsSplitForClient: [Split, Split, Split, Split] = [new Split(client), new Split(client), new Split(client), new Split(client)]
 
-        /*this.invoices.forEach(element => {
-           
-            switch(element.date.getMonth())
-            {
-                case 0:
-                case 1:
-                case 2:
+        this.invoices.forEach(element => {
+        if(element.client === client){  
+            if(element.date.getFullYear() === this.year ){
+                switch(element.date.getMonth())
                 {
-                    totalsSplitForClient[0].total += element.total;
+                    case 0:
+                    case 1:
+                    case 2:
+                    {
+                        totalsSplitForClient[0].total += element.total;
+                        break;
+                    }
+                    case 3:
+                    case 4:
+                    case 5:
+                    {
+                        totalsSplitForClient[1].total += element.total; 
+                        break;                   
+                    }
+                    case 6:
+                    case 7:
+                    case 8:
+                    {
+                        totalsSplitForClient[2].total += element.total; 
+                        break;
+                    }
+                    case 9:
+                    case 10:
+                    case 11:
+                    {
+                        totalsSplitForClient[3].total += element.total;
+                        break;  
+                    } 
                 }
-                case 3:
-                case 4:
-                case 5:
-                {
-                    totalsSplitForClient[1].total += element.total;                    
-                }
-                case 6:
-                case 7:
-                case 8:
-                {
-                    totalsSplitForClient[2].total += element.total; 
-                }
-                case 9:
-                case 10:
-                case 11:
-                {
-                    totalsSplitForClient[3].total += element.total;  
-                } 
-            }
-            
-        });*/
-        for(let i=0; i<this.invoices.length; i++){
-            if(this.invoices[i].client === client){
-                if ( this.invoices[i].date.getFullYear() === this.year )
-                {
-                    if(this.invoices[i].date.getMonth() >= 0 && this.invoices[i].date.getMonth() <= 2)
-                        totalsSplitForClient[0].total += this.invoices[i].total;
-
-                    else if(this.invoices[i].date.getMonth() >= 3 && this.invoices[i].date.getMonth() <= 5)
-                        totalsSplitForClient[1].total += this.invoices[i].total;
-
-                    else if(this.invoices[i].date.getMonth() >= 6 && this.invoices[i].date.getMonth() <= 8)
-                        totalsSplitForClient[2].total += this.invoices[i].total;
-                        
-                    else if(this.invoices[i].date.getMonth() >= 9 && this.invoices[i].date.getMonth() <= 11)
-                        totalsSplitForClient[3].total += this.invoices[i].total;
-                }
-            }
         }
+         } 
+        });
         return totalsSplitForClient;
     };
     avgPerSplit(){
